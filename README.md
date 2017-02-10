@@ -153,6 +153,7 @@ The Eddystone cocoapod comes with an example iOS project that shows how the vari
 ## Author
 
 Maintained by: Sam Krantz, sam@bluebite.com (@sekrantz)
+
 Original by: Tanner Nelson, tanner@bluebite.com
 
 ## License
