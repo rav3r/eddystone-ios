@@ -12,17 +12,17 @@ extension CBCentralManager {
     var stateString: String {
         get {
             switch (self.state) {
-            case .PoweredOn:
+            case .poweredOn:
                 return "Powered On"
-            case .PoweredOff:
+            case .poweredOff:
                 return "Powered Off"
-            case .Resetting:
+            case .resetting:
                 return "Resetting"
-            case .Unauthorized:
+            case .unauthorized:
                 return "Unauthorized"
-            case .Unknown:
+            case .unknown:
                 return "Unknown"
-            case .Unsupported:
+            case .unsupported:
                 return "Unsupported"
             }
             
@@ -34,17 +34,17 @@ extension CBPeripheralManager {
     var stateString: String {
         get {
             switch (self.state) {
-            case .PoweredOn:
+            case .poweredOn:
                 return "Powered On"
-            case .PoweredOff:
+            case .poweredOff:
                 return "Powered Off"
-            case .Resetting:
+            case .resetting:
                 return "Resetting"
-            case .Unauthorized:
+            case .unauthorized:
                 return "Unauthorized"
-            case .Unknown:
+            case .unknown:
                 return "Unknown"
-            case .Unsupported:
+            case .unsupported:
                 return "Unsupported"
             }
             

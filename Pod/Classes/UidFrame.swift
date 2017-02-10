@@ -25,11 +25,11 @@ class UidFrame: Frame {
         super.init()
     }
    
-    override class func frameWithBytes(bytes: [Byte]) -> UidFrame? {
+    override class func frameWithBytes(_ bytes: [Byte]) -> UidFrame? {
         var namespace = ""
         var instance = ""
         
-        for (offset, byte) in bytes.enumerate() {
+        for (offset, byte) in bytes.enumerated() {
             var hex = String(byte, radix: 16)
             if hex.characters.count == 1 {
                 hex = "0" + hex

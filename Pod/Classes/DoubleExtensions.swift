@@ -27,7 +27,7 @@
 */
 
 extension Double {
-    static func from88FixedPoint(byte1: UInt8, _ byte2: UInt8) -> Double {
+    static func from88FixedPoint(_ byte1: UInt8, _ byte2: UInt8) -> Double {
         var double: Double = 0
         
         var integer = Double(byte1)

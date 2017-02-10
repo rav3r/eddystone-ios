@@ -1,10 +1,10 @@
-public class Generic: Object {
+open class Generic: Object {
    
     //MARK: Properties
-    private(set) public var url: NSURL?
-    private(set) public var namespace: String?
-    private(set) public var instance: String?
-    public var uid: String? {
+    fileprivate(set) open var url: URL?
+    fileprivate(set) open var namespace: String?
+    fileprivate(set) open var instance: String?
+    open var uid: String? {
         get {
             if  let namespace = self.namespace,
                 let instance = self.instance {
@@ -15,7 +15,7 @@ public class Generic: Object {
     }
     
     //MARK: Initializations
-    init(url: NSURL?, namespace: String?, instance: String?, signalStrength: Beacon.SignalStrength, identifier: String) {
+    init(url: URL?, namespace: String?, instance: String?, signalStrength: Beacon.SignalStrength, identifier: String) {
         self.url = url
         self.namespace = namespace
         self.instance = instance
