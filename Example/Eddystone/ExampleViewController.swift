@@ -68,13 +68,13 @@ extension ExampleViewController: UITableViewDataSource {
         
         
         switch url.signalStrength {
-        case .excellent: cell.signalStrengthView.signal = .Excellent
-        case .veryGood: cell.signalStrengthView.signal = .VeryGood
-        case .good: cell.signalStrengthView.signal = .Good
-        case .low: cell.signalStrengthView.signal = .Low
-        case .veryLow: cell.signalStrengthView.signal = .VeryLow
-        case .noSignal: cell.signalStrengthView.signal = .NoSignal
-        default: cell.signalStrengthView.signal = .Unknown
+        case .excellent: cell.signalStrengthView.signal = .excellent
+        case .veryGood: cell.signalStrengthView.signal = .veryGood
+        case .good: cell.signalStrengthView.signal = .good
+        case .low: cell.signalStrengthView.signal = .low
+        case .veryLow: cell.signalStrengthView.signal = .veryLow
+        case .noSignal: cell.signalStrengthView.signal = .noSignal
+        default: cell.signalStrengthView.signal = .unknown
         }
     
         return cell
