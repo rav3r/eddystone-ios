@@ -2,11 +2,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-target 'Eddystone_Example', :exclusive => true do
-    pod "SignalStrength"
+target 'Eddystone_Example' do
+    pod "SignalStrength", :git => 'https://github.com/BlueBiteLLC/signal-strength-element-ios'
     pod "Eddystone", :path => "../"
 end
 
-target 'Eddystone_Tests', :exclusive => true do
-    pod "Eddystone", :path => "../" 
+target 'Eddystone_Tests' do
+    pod "Eddystone", :path => "../"
 end

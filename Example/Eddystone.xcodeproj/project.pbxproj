@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E65DDFA5C0B83D4B1000005 /* Pods_Eddystone_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8745C78F6FAA39B7D39ED /* Pods_Eddystone_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ExampleViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		8479CC281CDB97D28F387C97 /* Pods_Eddystone_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1C8DA9990F1997B4FAB540 /* Pods_Eddystone_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		88022559EF16D1E5EB49D2F8 /* Pods_Eddystone_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26881E9F0A613ADCD71C121 /* Pods_Eddystone_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8F869E51673B23CC1CF34BE1 /* Pods_Eddystone_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC944E8DBE18F0ED5AA76CA /* Pods_Eddystone_Example.framework */; };
 		C3AC648F1B62BBF700AC51A7 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC648E1B62BBF700AC51A7 /* ExampleTableViewCell.swift */; };
 		C3AC64911B62BF8500AC51A7 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC64901B62BF8500AC51A7 /* UITableViewExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -30,10 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05CCB8F330170E7F83FD43AB /* Pods-Eddystone_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Tests/Pods-Eddystone_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		07C1D453A4DA04D87F34A30C /* Pods-Eddystone_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example.release.xcconfig"; sourceTree = "<group>"; };
+		07E8745C78F6FAA39B7D39ED /* Pods_Eddystone_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eddystone_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED3E7C5BBCDA81E13955596 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		2A94E1EB05BC6CD23187B8C0 /* Pods-Eddystone_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example.release.xcconfig"; sourceTree = "<group>"; };
+		2BC944E8DBE18F0ED5AA76CA /* Pods_Eddystone_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eddystone_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8DA3DC90D3CDC97D94D396 /* Eddystone.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Eddystone.podspec; path = ../Eddystone.podspec; sourceTree = "<group>"; };
+		5866EBC7BC8AD2B9AEDF0F6D /* Pods-Eddystone_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Eddystone_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eddystone_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,13 +46,11 @@
 		607FACE51AFB9204008FA782 /* Eddystone_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Eddystone_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6BDB2B2FA049799328B5CB38 /* Pods-Eddystone_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Tests/Pods-Eddystone_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8FD8206BAF560578F950BB31 /* Pods-Eddystone_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B26881E9F0A613ADCD71C121 /* Pods_Eddystone_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eddystone_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAFF0B67C100EE126010653 /* Pods-Eddystone_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Tests/Pods-Eddystone_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C3AC648E1B62BBF700AC51A7 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
 		C3AC64901B62BF8500AC51A7 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		C65E48AAB4C2DC47DB3F2AB8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		FF1C8DA9990F1997B4FAB540 /* Pods_Eddystone_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eddystone_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41B74AD92BF6D3285336B4A /* Pods-Eddystone_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eddystone_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eddystone_Tests/Pods-Eddystone_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88022559EF16D1E5EB49D2F8 /* Pods_Eddystone_Example.framework in Frameworks */,
+				8F869E51673B23CC1CF34BE1 /* Pods_Eddystone_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,13 +66,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8479CC281CDB97D28F387C97 /* Pods_Eddystone_Tests.framework in Frameworks */,
+				5E65DDFA5C0B83D4B1000005 /* Pods_Eddystone_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		438F76F81612772678B72593 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BC944E8DBE18F0ED5AA76CA /* Pods_Eddystone_Example.framework */,
+				07E8745C78F6FAA39B7D39ED /* Pods_Eddystone_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +89,8 @@
 				607FACD21AFB9204008FA782 /* Example for Eddystone */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				86B44C7A59CF8337B5806478 /* Pods */,
-				98575BFD79085312EBE3ACE1 /* Frameworks */,
+				A609C53EB27F8B39372FE2C4 /* Pods */,
+				438F76F81612772678B72593 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,24 +154,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		86B44C7A59CF8337B5806478 /* Pods */ = {
+		A609C53EB27F8B39372FE2C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8FD8206BAF560578F950BB31 /* Pods-Eddystone_Example.debug.xcconfig */,
-				2A94E1EB05BC6CD23187B8C0 /* Pods-Eddystone_Example.release.xcconfig */,
-				05CCB8F330170E7F83FD43AB /* Pods-Eddystone_Tests.debug.xcconfig */,
-				6BDB2B2FA049799328B5CB38 /* Pods-Eddystone_Tests.release.xcconfig */,
+				5866EBC7BC8AD2B9AEDF0F6D /* Pods-Eddystone_Example.debug.xcconfig */,
+				07C1D453A4DA04D87F34A30C /* Pods-Eddystone_Example.release.xcconfig */,
+				D41B74AD92BF6D3285336B4A /* Pods-Eddystone_Tests.debug.xcconfig */,
+				AEAFF0B67C100EE126010653 /* Pods-Eddystone_Tests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		98575BFD79085312EBE3ACE1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B26881E9F0A613ADCD71C121 /* Pods_Eddystone_Example.framework */,
-				FF1C8DA9990F1997B4FAB540 /* Pods_Eddystone_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,12 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Eddystone_Example" */;
 			buildPhases = (
-				7DD5CB2A8D53580E294CCA82 /* Check Pods Manifest.lock */,
+				75D6353FA8948C78102BCD86 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				185B3439DA2481C7F0547FF6 /* Embed Pods Frameworks */,
-				5084F375C88D8C79AEDA9EFE /* Copy Pods Resources */,
+				045354D8399BB1217724727B /* [CP] Embed Pods Frameworks */,
+				E44E37ED76B02BE9482C0C90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,12 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Eddystone_Tests" */;
 			buildPhases = (
-				968A862E6B7D0EB0C3A248E5 /* Check Pods Manifest.lock */,
+				4C8A8700D941453132FAAF38 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				96CE0B0178EC2E2F260B4AC9 /* Embed Pods Frameworks */,
-				82EBD1F08ED80FC7444B9655 /* Copy Pods Resources */,
+				13CAC5C54339E284AFFD8D2C /* [CP] Embed Pods Frameworks */,
+				07ECADEB603275B0875CC545 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,14 +217,16 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -269,14 +271,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		185B3439DA2481C7F0547FF6 /* Embed Pods Frameworks */ = {
+		045354D8399BB1217724727B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,44 +286,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5084F375C88D8C79AEDA9EFE /* Copy Pods Resources */ = {
+		07ECADEB603275B0875CC545 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DD5CB2A8D53580E294CCA82 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		82EBD1F08ED80FC7444B9655 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,34 +301,64 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eddystone_Tests/Pods-Eddystone_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		968A862E6B7D0EB0C3A248E5 /* Check Pods Manifest.lock */ = {
+		13CAC5C54339E284AFFD8D2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		96CE0B0178EC2E2F260B4AC9 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eddystone_Tests/Pods-Eddystone_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C8A8700D941453132FAAF38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75D6353FA8948C78102BCD86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E44E37ED76B02BE9482C0C90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eddystone_Example/Pods-Eddystone_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -424,8 +426,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -469,8 +473,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -489,13 +495,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FD8206BAF560578F950BB31 /* Pods-Eddystone_Example.debug.xcconfig */;
+			baseConfigurationReference = 5866EBC7BC8AD2B9AEDF0F6D /* Pods-Eddystone_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Eddystone/Info.plist;
@@ -504,12 +511,13 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A94E1EB05BC6CD23187B8C0 /* Pods-Eddystone_Example.release.xcconfig */;
+			baseConfigurationReference = 07C1D453A4DA04D87F34A30C /* Pods-Eddystone_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Eddystone/Info.plist;
@@ -518,12 +526,13 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05CCB8F330170E7F83FD43AB /* Pods-Eddystone_Tests.debug.xcconfig */;
+			baseConfigurationReference = D41B74AD92BF6D3285336B4A /* Pods-Eddystone_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -534,19 +543,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eddystone_Example.app/Eddystone_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BDB2B2FA049799328B5CB38 /* Pods-Eddystone_Tests.release.xcconfig */;
+			baseConfigurationReference = AEAFF0B67C100EE126010653 /* Pods-Eddystone_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eddystone_Example.app/Eddystone_Example";
 			};
 			name = Release;

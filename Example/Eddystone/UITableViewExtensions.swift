@@ -2,10 +2,10 @@ import UIKit
 
 extension UITableView {
     
-    func switchDataSourceFrom<T:Equatable>(oldData: [T], to newData: [T], withAnimation animation: UITableViewRowAnimation) {
+    func switchDataSourceFrom<T:Equatable>(_ oldData: [T], to newData: [T], withAnimation animation: UITableViewRowAnimation) {
         
-        var indexPathsToInsert = [NSIndexPath]()
-        var indexPathsToDelete = [NSIndexPath]()
+        var indexPathsToInsert = [IndexPath]()
+        var indexPathsToDelete = [IndexPath]()
         
         var index = 0
         for newScan in newData {
@@ -19,11 +19,11 @@ extension UITableView {
             
             if !found {
                 indexPathsToInsert.append(
-                    NSIndexPath(forRow: index, inSection: 0)
+                    IndexPath(row: index, section: 0)
                 )
             }
             
-            index++
+            index += 1
         }
         
         index = 0
@@ -38,22 +38,22 @@ extension UITableView {
             
             if !found {
                 indexPathsToDelete.append(
-                    NSIndexPath(forRow: index, inSection: 0)
+                    IndexPath(row: index, section: 0)
                 )
             }
             
-            index++
+            index += 1
         }
         
         self.beginUpdates()
         
-        self.insertRowsAtIndexPaths(indexPathsToInsert, withRowAnimation: animation)
-        self.deleteRowsAtIndexPaths(indexPathsToDelete, withRowAnimation: animation)
+        self.insertRows(at: indexPathsToInsert, with: animation)
+        self.deleteRows(at: indexPathsToDelete, with: animation)
         
         self.endUpdates()
         
         if let rows = self.indexPathsForVisibleRows {
-            self.reloadRowsAtIndexPaths(rows, withRowAnimation: .None)
+            self.reloadRows(at: rows, with: .none)
         }
     }
     

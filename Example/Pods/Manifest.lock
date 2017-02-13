@@ -1,17 +1,26 @@
 PODS:
-  - Eddystone (1.1.2)
-  - SignalStrength (1.0.1)
+  - Eddystone (1.1.3)
+  - SignalStrength (1.0.2)
 
 DEPENDENCIES:
   - Eddystone (from `../`)
-  - SignalStrength
+  - SignalStrength (from `https://github.com/BlueBiteLLC/signal-strength-element-ios`)
 
 EXTERNAL SOURCES:
   Eddystone:
-    :path: "../"
+    :path: ../
+  SignalStrength:
+    :git: https://github.com/BlueBiteLLC/signal-strength-element-ios
+
+CHECKOUT OPTIONS:
+  SignalStrength:
+    :commit: 15ccfc013252a2aab0a3d42e16a9e2f1296c1ac8
+    :git: https://github.com/BlueBiteLLC/signal-strength-element-ios
 
 SPEC CHECKSUMS:
-  Eddystone: e19e71d69f6f53115edc66749e60d380d1e377c5
-  SignalStrength: e3a17f211240e1c97164fa1cb37b428f5350f12c
+  Eddystone: a56b4cb97540f43617d6fc488a9ff75eab1d66a4
+  SignalStrength: 4c9761b29c31797801b8b7167be76274d6953a04
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 25c49990386fafdc99eaaff25b1f9d73db207b95
+
+COCOAPODS: 1.2.0

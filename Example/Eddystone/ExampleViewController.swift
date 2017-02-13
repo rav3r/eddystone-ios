@@ -37,7 +37,7 @@ extension ExampleViewController: Eddystone.ScannerDelegate {
         self.previousUrls = self.urls
         self.urls = Eddystone.Scanner.nearbyUrls
         
-        self.mainTableView.switchDataSourceFrom(self.previousUrls, to: self.urls, withAnimation: .Top)
+        self.mainTableView.switchDataSourceFrom(self.previousUrls, to: self.urls, withAnimation: .top)
     }
     
 }
@@ -45,12 +45,12 @@ extension ExampleViewController: Eddystone.ScannerDelegate {
 
 extension ExampleViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.urls.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ExampleTableViewCell") as! ExampleTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExampleTableViewCell") as! ExampleTableViewCell
         
         let url = self.urls[indexPath.row]
         
@@ -68,12 +68,12 @@ extension ExampleViewController: UITableViewDataSource {
         
         
         switch url.signalStrength {
-        case .Excellent: cell.signalStrengthView.signal = .Excellent
-        case .VeryGood: cell.signalStrengthView.signal = .VeryGood
-        case .Good: cell.signalStrengthView.signal = .Good
-        case .Low: cell.signalStrengthView.signal = .Low
-        case .VeryLow: cell.signalStrengthView.signal = .VeryLow
-        case .NoSignal: cell.signalStrengthView.signal = .NoSignal
+        case .excellent: cell.signalStrengthView.signal = .Excellent
+        case .veryGood: cell.signalStrengthView.signal = .VeryGood
+        case .good: cell.signalStrengthView.signal = .Good
+        case .low: cell.signalStrengthView.signal = .Low
+        case .veryLow: cell.signalStrengthView.signal = .VeryLow
+        case .noSignal: cell.signalStrengthView.signal = .NoSignal
         default: cell.signalStrengthView.signal = .Unknown
         }
     
@@ -84,8 +84,8 @@ extension ExampleViewController: UITableViewDataSource {
 
 extension ExampleViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
