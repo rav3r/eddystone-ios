@@ -1,6 +1,6 @@
 # Eddystone CocoaPod
 
-[![CI Status](http://img.shields.io/travis/BlueBiteLLC/Eddystone.svg?style=flat)](https://travis-ci.org/Tanner Nelson/Eddystone)
+[![CI Status](http://img.shields.io/travis/BlueBiteLLC/eddystone-ios.svg?style=flat)](https://travis-ci.org/BlueBiteLLC/eddystone-ios)
 [![Version](https://img.shields.io/cocoapods/v/Eddystone.svg?style=flat)](http://cocoapods.org/pods/Eddystone)
 [![License](https://img.shields.io/cocoapods/l/Eddystone.svg?style=flat)](http://cocoapods.org/pods/Eddystone)
 [![Platform](https://img.shields.io/cocoapods/p/Eddystone.svg?style=flat)](http://cocoapods.org/pods/Eddystone)
