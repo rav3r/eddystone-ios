@@ -97,7 +97,7 @@ public var instance: String
 public var uid: String
 ```
 
-##Debugging
+## Debugging
 
 Logs from the Eddystone module may be helpful while debugging your application. To enable logs, use the following line.
 
