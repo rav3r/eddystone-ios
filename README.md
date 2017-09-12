@@ -145,6 +145,8 @@ it, simply add the following line to your Podfile:
 pod "Eddystone"
 ```
 
+Additionally, there is an unmaintained Swift 2 branch: `swift-2`
+
 ## Examples
 
 The Eddystone cocoapod comes with an example iOS project that shows how the various method calls work in a real application. The example application also includes the aforementioned Additional Resources.
