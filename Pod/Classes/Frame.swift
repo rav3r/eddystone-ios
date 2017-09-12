@@ -8,7 +8,7 @@
 import Foundation
 
 class Frame {
-    class func frameWithBytes(bytes: [Byte]) -> Frame? {
+    class func frameWithBytes(_ bytes: [Byte]) -> Frame? {
         fatalError("Function should be overridden")
     }
 }

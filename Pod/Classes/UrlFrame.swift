@@ -35,20 +35,20 @@ class UrlFrame: Frame {
     ]
     
     //MARK: Properties
-    var url: NSURL
+    var url: URL
     
     //MARK: Initializations
-    init(url: NSURL) {
+    init(url: URL) {
         self.url = url
         
         super.init()
     }
    
     //MARK: Class
-    override class func frameWithBytes(bytes: [Byte]) -> UrlFrame? {
+    override class func frameWithBytes(_ bytes: [Byte]) -> UrlFrame? {
         var urlString = ""
         
-        for (offset, byte) in bytes.enumerate() {
+        for (offset, byte) in bytes.enumerated() {
             switch offset {
             case 2:
                 if byte < UrlFrame.schemePrefixes.count {
@@ -59,7 +59,7 @@ class UrlFrame: Frame {
                     urlString += UrlFrame.urlEncodings[byte]
                 } else {
                     let unicode = UnicodeScalar(byte)
-                    let character = Character(unicode)
+                    let character = Character(unicode!)
                     urlString.append(character)
                 }
             default:
@@ -68,7 +68,7 @@ class UrlFrame: Frame {
             
         }
         
-        if let url = NSURL(string: urlString) {
+        if let url = URL(string: urlString) {
             return UrlFrame(url: url)
         } else {
             log("Invalid URL frame")

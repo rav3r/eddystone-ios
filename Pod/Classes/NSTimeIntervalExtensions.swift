@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSTimeInterval {
+public extension TimeInterval {
     var readable: String {
         get {
             let second = 1
