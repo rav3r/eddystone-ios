@@ -1,9 +1,9 @@
-public class Uid: Object {
+open class Uid: Object {
     
     //MARK: Properties
-    private(set) public var namespace: String
-    private(set) public var instance: String
-    public var uid: String {
+    fileprivate(set) open var namespace: String
+    fileprivate(set) open var instance: String
+    open var uid: String {
         get {
             return self.namespace + self.instance
         }

@@ -2,14 +2,20 @@ import Foundation
 
 public var logging = false
 
-func log(message: AnyObject) {
+func log(_ message: AnyObject) {
+    if logging {
+        print("[Eddystone] \(message)")
+    }
+}
+
+func log(_ message: String) {
     if logging {
         print("[Eddystone] \(message)")
     }
 }
 
 enum FrameType {
-    case URL, UID, TLM
+    case url, uid, tlm
 }
 
 typealias Byte = Int

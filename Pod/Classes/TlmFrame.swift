@@ -24,7 +24,7 @@ class TlmFrame: Frame {
         super.init()
     }
     
-    override class func frameWithBytes(bytes: [Byte]) -> TlmFrame? {
+    override class func frameWithBytes(_ bytes: [Byte]) -> TlmFrame? {
         var batteryVolts: Int?
         var temperature: Double?
         var advertisementCount: Int?

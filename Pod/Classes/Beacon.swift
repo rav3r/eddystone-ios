@@ -1,16 +1,16 @@
 import CoreBluetooth
 
-public class Beacon {
+open class Beacon {
     
     //MARK: Enumerations
     public enum SignalStrength: Int {
-        case Excellent
-        case VeryGood
-        case Good
-        case Low
-        case VeryLow
-        case NoSignal
-        case Unknown
+        case excellent
+        case veryGood
+        case good
+        case low
+        case veryLow
+        case noSignal
+        case unknown
     }
     
     //MARK: Frames
@@ -34,7 +34,7 @@ public class Beacon {
             return average
         }
     }
-    var signalStrength: SignalStrength = .Unknown
+    var signalStrength: SignalStrength = .unknown
     var rssiBuffer = [Double]()
     var distance: Double {
         get {
@@ -57,8 +57,8 @@ public class Beacon {
     }
     
     //MARK: Functions
-    func updateRssi(newRssi: Double) -> Bool {
-        self.rssiBuffer.insert(newRssi, atIndex: 0)
+    func updateRssi(_ newRssi: Double) -> Bool {
+        self.rssiBuffer.insert(newRssi, at: 0)
         if self.rssiBuffer.count >= 20 {
             self.rssiBuffer.removeLast()
         }
@@ -73,7 +73,7 @@ public class Beacon {
     }
     
     //MARK: Calculations
-    class func calculateAccuracy(txPower txPower: Int, rssi: Double) -> Double {
+    class func calculateAccuracy(txPower: Int, rssi: Double) -> Double {
         if rssi == 0 {
             return 0
         }
@@ -87,29 +87,29 @@ public class Beacon {
         
     }
     
-    class func calculateSignalStrength(distance: Double) -> SignalStrength {
+    class func calculateSignalStrength(_ distance: Double) -> SignalStrength {
         switch distance {
         case 0...24999:
-            return .Excellent
+            return .excellent
         case 25000...49999:
-            return .VeryGood
+            return .veryGood
         case 50000...74999:
-            return .Good
+            return .good
         case 75000...99999:
-            return .Low
+            return .low
         default:
-            return .VeryLow
+            return .veryLow
         }
     }
 
     //MARK: Advertisement Data
-    func parseAdvertisementData(advertisementData: [NSObject : AnyObject], rssi: Double) {
+    func parseAdvertisementData(_ advertisementData: [AnyHashable: Any], rssi: Double) {
         self.updateRssi(rssi)
         
         if let bytes = Beacon.bytesFromAdvertisementData(advertisementData) {
             if let type = Beacon.frameTypeFromBytes(bytes) {
                 switch type {
-                case .URL:
+                case .url:
                     if let frame = UrlFrame.frameWithBytes(bytes) {
                         if frame.url != self.frames.url?.url {
                             self.frames.url = frame
@@ -117,7 +117,7 @@ public class Beacon {
                             self.notifyChange()
                         }
                     }
-                case .UID:
+                case .uid:
                     if let frame = UidFrame.frameWithBytes(bytes) {
                         if frame.uid != self.frames.uid?.uid {
                             self.frames.uid = frame
@@ -125,7 +125,7 @@ public class Beacon {
                             self.notifyChange()
                         }
                     }
-                case .TLM:
+                case .tlm:
                     if let frame = TlmFrame.frameWithBytes(bytes) {
                         self.frames.tlm = frame
                         log("Parsed TLM Frame with battery: \(frame.batteryVolts) temperature: \(frame.temperature) advertisement count: \(frame.advertisementCount) on time: \(frame.onTime)")
@@ -137,7 +137,7 @@ public class Beacon {
     }
     
     //MARK: Bytes
-    class func beaconWithAdvertisementData(advertisementData: [NSObject : AnyObject], rssi: Double, identifier: String) -> Beacon? {
+    class func beaconWithAdvertisementData(_ advertisementData: [AnyHashable: Any], rssi: Double, identifier: String) -> Beacon? {
         var txPower: Int?
         var type: FrameType?
 
@@ -145,7 +145,7 @@ public class Beacon {
             type = Beacon.frameTypeFromBytes(bytes)
             txPower = Beacon.txPowerFromBytes(bytes)
             
-            if let txPower = txPower where type != nil {
+            if let txPower = txPower, type != nil {
                 let beacon = Beacon(rssi: rssi, txPower: txPower, identifier: identifier)
                 beacon.parseAdvertisementData(advertisementData, rssi: rssi)
                 return beacon
@@ -156,12 +156,12 @@ public class Beacon {
         return nil
     }
     
-    class func bytesFromAdvertisementData(advertisementData: [NSObject : AnyObject]) -> [Byte]? {
-        if let serviceData = advertisementData[CBAdvertisementDataServiceDataKey] as? [NSObject: AnyObject] {
-            if let urlData = serviceData[Scanner.eddystoneServiceUUID] as? NSData {
-                let count = urlData.length / sizeof(UInt8)
-                var bytes = [UInt8](count: count, repeatedValue: 0)
-                urlData.getBytes(&bytes, length:count * sizeof(UInt8))
+    class func bytesFromAdvertisementData(_ advertisementData: [AnyHashable: Any]) -> [Byte]? {
+        if let serviceData = advertisementData[CBAdvertisementDataServiceDataKey] as? [AnyHashable: Any] {
+            if let urlData = serviceData[Scanner.eddystoneServiceUUID] as? Data {
+                let count = urlData.count / MemoryLayout<UInt8>.size
+                var bytes = [UInt8](repeating: 0, count: count)
+                (urlData as NSData).getBytes(&bytes, length:count * MemoryLayout<UInt8>.size)
                 return bytes.map { byte in
                     return Byte(byte)
                 }
@@ -171,15 +171,15 @@ public class Beacon {
         return nil
     }
     
-    class func frameTypeFromBytes(bytes: [Byte]) -> FrameType? {
+    class func frameTypeFromBytes(_ bytes: [Byte]) -> FrameType? {
         if bytes.count >= 1 {
             switch bytes[0] {
             case 0:
-                return .UID
+                return .uid
             case 16:
-                return .URL
+                return .url
             case 32:
-                return .TLM
+                return .tlm
             default:
                 break
             }
@@ -188,10 +188,10 @@ public class Beacon {
         return nil
     }
     
-    class func txPowerFromBytes(bytes: [Byte]) -> Int? {
+    class func txPowerFromBytes(_ bytes: [Byte]) -> Int? {
         if bytes.count >= 2 {
             if let type = Beacon.frameTypeFromBytes(bytes) {
-                if type == .UID || type == .URL {
+                if type == .uid || type == .url {
                     return Int(bytes[1])
                 }
             }

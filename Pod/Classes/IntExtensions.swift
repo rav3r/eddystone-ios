@@ -7,10 +7,10 @@
 */
 
 extension Int {
-    static func fromByteArray(bytes: [UInt8]) -> Int {
+    static func fromByteArray(_ bytes: [UInt8]) -> Int {
         var int = 0
         
-        for (offset, byte) in bytes.enumerate() {
+        for (offset, byte) in bytes.enumerated() {
             let factor: Double = Double(bytes.count) - (Double(offset) + 1);
             let size: Double = 256
             

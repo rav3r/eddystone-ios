@@ -1,17 +1,23 @@
 import CoreBluetooth
 
-public class Scanner: NSObject {
+open class Scanner: NSObject {
     
     //MARK: Public
-    public class func start(delegate: ScannerDelegate) {
+    open class func start(_ delegate: ScannerDelegate) {
         
         self.shared.centralManager = CBCentralManager(delegate: self.shared, queue: nil)
         self.shared.delegate = delegate
         
     }
     
+    open class func stop() {
+        
+        self.shared.centralManager.stopScan()
+        self.shared.delegate = nil
+    }
+    
     //Returns an array of Url objects that are nearby
-    public class var nearbyUrls: [Url] {
+    open class var nearbyUrls: [Url] {
         get {
             var urls = [Url]()
             
@@ -30,7 +36,7 @@ public class Scanner: NSObject {
     }
     
     //Returns an array of Uid objects that are nearby
-    public class var nearbyUids: [Uid] {
+    open class var nearbyUids: [Uid] {
         get {
             var uids = [Uid]()
             
@@ -49,12 +55,12 @@ public class Scanner: NSObject {
     }
     
     //Returns an array of all nearby Eddystone objects
-    public class var nearby: [Generic] {
+    open class var nearby: [Generic] {
         get {
             var generics = [Generic]()
             
             for beacon in self.beacons {
-                var url: NSURL?
+                var url: URL?
                 var namespace: String?
                 var instance: String?
                 
@@ -64,7 +70,7 @@ public class Scanner: NSObject {
                 }
                 
                 if let urlFrame = beacon.frames.url {
-                    url = urlFrame.url
+                    url = urlFrame.url as URL
                 }
                 
                 let generic = Generic(url: url, namespace: namespace, instance: instance, signalStrength: beacon.signalStrength, identifier: beacon.identifier)
@@ -88,7 +94,7 @@ public class Scanner: NSObject {
     //MARK: Properties
     var centralManager = CBCentralManager()
     var discoveredBeacons = [String: Beacon]()
-    var beaconTimers = [String: NSTimer]()
+    var beaconTimers = [String: Timer]()
     
     //MARK: Delegate
     var delegate: ScannerDelegate?
@@ -105,7 +111,7 @@ public class Scanner: NSObject {
                 orderedBeacons.append(beacon)
             }
             
-            orderedBeacons.sortInPlace { beacon1, beacon2 in
+            orderedBeacons.sort { beacon1, beacon2 in
                 return beacon1.distance < beacon2.distance
             }
             
@@ -117,36 +123,36 @@ public class Scanner: NSObject {
 
 extension Scanner: CBCentralManagerDelegate {
     
-    public func centralManagerDidUpdateState(central: CBCentralManager) {
-        if central.state == .PoweredOn {
-            central.scanForPeripheralsWithServices([Scanner.eddystoneServiceUUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+    public func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn {
+            central.scanForPeripherals(withServices: [Scanner.eddystoneServiceUUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
         } else {
             log("Bluetooth not powered on. Current state: \(central.state)")
         }
     }
     
-    public func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        let identifier = peripheral.identifier.UUIDString
+    public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        let identifier = peripheral.identifier.uuidString
 
         if let beacon = self.discoveredBeacons[identifier] {
             beacon.parseAdvertisementData(advertisementData, rssi: RSSI.doubleValue)
         } else {
             if let beacon = Beacon.beaconWithAdvertisementData(advertisementData, rssi: RSSI.doubleValue, identifier: identifier) {
                 beacon.delegate = self
-                self.discoveredBeacons[peripheral.identifier.UUIDString] = beacon
+                self.discoveredBeacons[peripheral.identifier.uuidString] = beacon
                 self.notifyChange()
             }
         }
         
         self.beaconTimers[identifier]?.invalidate()
-        self.beaconTimers[identifier] = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(Scanner.beaconTimerExpire(_:)), userInfo: identifier, repeats: false)
+        self.beaconTimers[identifier] = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(Scanner.beaconTimerExpire(_:)), userInfo: identifier, repeats: false)
     }
     
-    @objc func beaconTimerExpire(timer: NSTimer) {
+    @objc func beaconTimerExpire(_ timer: Timer) {
         if let identifier = timer.userInfo as? String {
             log("Beacon lost")
             
-            self.discoveredBeacons.removeValueForKey(identifier)
+            self.discoveredBeacons.removeValue(forKey: identifier)
             self.notifyChange()
         }
     }

@@ -1,18 +1,18 @@
-public class Object: Equatable {
+open class Object: Equatable {
     
     //MARK: Properties
     /// The signal strength of the nearby entity
-    private(set) public var signalStrength: Beacon.SignalStrength
+    fileprivate(set) open var signalStrength: Beacon.SignalStrength
     /// A unique identifier for the beacon
-    private(set) public var identifier: String
+    fileprivate(set) open var identifier: String
     /// The percent battery left on the beacon
-    private(set) public var battery: Double?
+    fileprivate(set) open var battery: Double?
     /// The temperature of the beacon in degrees Celsius
-    private(set) public var temperature: Double?
+    fileprivate(set) open var temperature: Double?
     /// The amount of packets the beacon has sent
-    private(set) public var advertisementCount: Int?
+    fileprivate(set) open var advertisementCount: Int?
     /// The amount of time the beacon has been on in seconds
-    private(set) public var onTime: NSTimeInterval?
+    fileprivate(set) open var onTime: TimeInterval?
     
     //MARK: Initilizations
     init (signalStrength: Beacon.SignalStrength, identifier: String) {
@@ -20,15 +20,15 @@ public class Object: Equatable {
         self.identifier = identifier
     }
     
-    func parseTlmFrame(frame: TlmFrame) {
+    func parseTlmFrame(_ frame: TlmFrame) {
         self.battery = Object.batteryLevelInPercent(frame.batteryVolts)
         self.temperature = frame.temperature
         self.advertisementCount = frame.advertisementCount
-        self.onTime = NSTimeInterval(frame.onTime / 10)
+        self.onTime = TimeInterval(frame.onTime / 10)
     }
     
     //MARK: Class
-    class func batteryLevelInPercent(mvolts: Int) -> Double
+    class func batteryLevelInPercent(_ mvolts: Int) -> Double
     {
         var batteryLevel: Double
         let mvoltsDouble = Double(mvolts)
